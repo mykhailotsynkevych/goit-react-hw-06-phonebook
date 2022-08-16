@@ -1,8 +1,7 @@
-import { useState,  } from 'react';
+import { useState } from 'react';
 import s from './Form.module.css';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import contactsActions from '../../redux/contacts/contacts-actions';
-
 
 let initialForm = {
   name: '',
@@ -12,18 +11,17 @@ let initialForm = {
 export default function Form() {
   const [form, setForm] = useState(initialForm);
   const contacts = useSelector(state => state.contacts.items);
-    const dispatch = useDispatch();
-  
-    
-    const handleChange = e => {
-      const { name, value } = e.target;
-      setForm(prev => {
-        return { ...prev, [name]: value };
-      });
-    };
-    
-    const handleSubmit = e => {
-      e.preventDefault();
+  const dispatch = useDispatch();
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setForm(prev => {
+      return { ...prev, [name]: value };
+    });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
     if (
       contacts.find(
         contact => contact.name.toLowerCase() === form.name.toLowerCase()
@@ -70,4 +68,3 @@ export default function Form() {
     </>
   );
 }
-

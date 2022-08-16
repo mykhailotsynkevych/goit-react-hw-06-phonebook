@@ -11,8 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import todosReducer from './todos/contacts-reducer';
-// import counterReducer from './counter/counter-reducer';
+import contactsReducer from './contacts/contacts-reducer';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -23,7 +22,7 @@ const middleware = [
   logger,
 ];
 
-const todosPersistConfig = {
+const contactsPersistConfig = {
   key: 'contact',
   storage,
   blacklist: ['filter'],
@@ -31,7 +30,7 @@ const todosPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-    todos: persistReducer(todosPersistConfig, todosReducer),
+    contacts: persistReducer(contactsPersistConfig, contactsReducer),
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

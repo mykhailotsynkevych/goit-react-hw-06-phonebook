@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import s from './Form.module.css';
 import { useDispatch } from 'react-redux';
-import todosActions from '../../redux/todos/contacts-actions';
+import contactsActions from '../../redux/contacts/contacts-actions';
 
 let initialForm = {
   name: '',
@@ -23,7 +23,7 @@ export default function Form() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    dispatch(todosActions.addContact(form));
+    dispatch(contactsActions.addContact(form));
 
     setForm({ name: '', number: '', id: '' });
   };

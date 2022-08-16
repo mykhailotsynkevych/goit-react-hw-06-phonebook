@@ -3,8 +3,8 @@ import React from "react";
 import s from './Filtr.module.css';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { getFilter } from '../../redux/todos/contacts-selectors';
-import todosActions from '../../redux/todos/contacts-actions';
+import { getFilter } from '../../redux/contacts/contacts-selectors';
+import contactsActions from '../../redux/contacts/contacts-actions';
 
 const Filtr = () => {
     const value = useSelector(getFilter);
@@ -20,7 +20,7 @@ const Filtr = () => {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
             value={value}
-            onChange={e => dispatch(todosActions.changeFilter(e.target.value))}
+            onChange={e => dispatch(contactsActions.changeFilter(e.target.value))}
             />
           </label>
       </>

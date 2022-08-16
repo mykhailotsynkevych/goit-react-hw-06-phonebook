@@ -1,7 +1,7 @@
-export const getContact = state => state.todos.items;
-export const getFilter = state => state.todos.filter;
+export const getContact = state => state.contacts.items;
+export const getFilter = state => state.contacts.filter;
 
-export const getVisibleTodos = state => {
+export const getVisibleContacts = state => {
   const contacts = getContact(state);
   const filter = getFilter(state);
   const normalizedFilter = filter.toLowerCase();

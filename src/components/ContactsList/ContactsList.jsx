@@ -4,11 +4,11 @@ import ContactsEl from './ContactsEl';
 
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import contactsActions from '../../redux/todos/contacts-actions';
-import { getVisibleTodos } from '../../redux/todos/contacts-selectors';
+import contactsActions from '../../redux/contacts/contacts-actions';
+import { getVisibleContacts } from '../../redux/contacts/contacts-selectors';
 
 const ContactsList = () => {
-  const contactsList = useSelector(getVisibleTodos);
+  const contactsList = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
 
   const onDeleteContact = id => dispatch(contactsActions.deleteContact(id));
